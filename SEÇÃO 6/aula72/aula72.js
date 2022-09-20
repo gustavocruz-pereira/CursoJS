@@ -1,0 +1,20 @@
+// Getter Setter
+
+function Produto(nome, preco, estoque) {
+    this.nome = nome;
+    this.preco = preco;
+    Object.defineProperty(this, 'estoque', {
+        enumerable: true, // mostra a chave
+        configurable: false, // configuravel
+        get: function () {
+            return estoque;
+        },
+        set: function (valor) {
+
+        }
+    });
+}
+
+const p1 = new Produto('Camiseta', 20, 3)
+p1.estoque = 10
+console.log(p1)
