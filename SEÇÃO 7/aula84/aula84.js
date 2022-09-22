@@ -22,16 +22,28 @@ class FormataCPF {
         this.cpf = cpf;
     }
 
-    valida() {
+    valida(v) {
+        let d1
+        let d2
+        v = this.formataCpf(v)
+        d1 = this.primeiraParte(v)
+        d1 = this.digito(d1)
+        v.push(d1)
+        d2 = this.segundaParte(v)
+        d2 = this.digito(d2)
+        v.push(d2)
+        v.join('')
     }
 
-    static formataCpf(v) {
+    formataCpf(v) {
         this.cpf = cpf.replace(/\D+/g, '');
         this.cpf = Array.from(this.cpf)
-        return this.cpf
+        this.cpf.pop()
+        this.cpf.pop()
+        return this.cpf;
     }
 
-    static primeiraParte(v) {
+    primeiraParte(v) {
         let c = 10;
         let r = 0;
         for (let x of v) {
@@ -42,12 +54,12 @@ class FormataCPF {
         return r
     }
 
-    set digito(v) {
+    digito(v) {
         if (11 - (v % 11) > 9) return 0
         return 11 - (v % 11);
     }
 
-    static segundaParte(v) {
+    segundaParte(v) {
         let c = 11;
         let r = 0;
         for (let x of v) {
@@ -60,6 +72,6 @@ class FormataCPF {
 
 }
 
-a = FormataCPF.formataCpf(cpf)
-a = FormataCPF.primeiraParte(a)
+const c1 = new FormataCPF("705.484.450-52")
+a = c1.valida()
 console.log(a)
