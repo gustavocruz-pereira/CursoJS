@@ -74,4 +74,3 @@ class FormataCPF {
 
 const c1 = new FormataCPF("705.484.450-52")
 a = c1.valida()
-console.log(a)
