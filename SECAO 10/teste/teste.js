@@ -5,13 +5,15 @@ async function getBitcoin() {
     const dados = await response
     const preco = await dados.BTCBRL.ask
     //console.log(preco)
+    console.log(preco)
     return preco
+
 }
 
 
 getBitcoin().then(value => {
     const p = value
-    price.innerHTML += `R$ ${p}`
+    price.innerHTML += `R$${p}`
 })
 
 
