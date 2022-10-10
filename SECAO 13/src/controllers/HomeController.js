@@ -1,5 +1,10 @@
+import Aluno from '../models/Aluno'
+
 class HomeController {
-    index(req, res) {
+    async index(req, res) {
+        const novoAluno = await Aluno.create({
+
+        });
         res.json({
             "tudoCerto": true,
         });
