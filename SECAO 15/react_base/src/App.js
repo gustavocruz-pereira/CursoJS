@@ -1,7 +1,7 @@
 import React from "react";
+import { Router } from "react-router-dom";
 
-import { BrowserRouter } from "react-router-dom";
-import { Title } from "./pages/Login/styled";
+import history from "./services/history";
 import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/Header";
 import Routes from "./routes";
@@ -9,11 +9,11 @@ import Routes from "./routes";
 
 export default function Login() {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <Header />
             <Routes />
             <GlobalStyles />
-        </BrowserRouter>
+        </Router>
     )
 }
 
