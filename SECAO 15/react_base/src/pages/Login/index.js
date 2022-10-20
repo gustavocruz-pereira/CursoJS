@@ -7,7 +7,21 @@ import { Title, Paragrafo } from './styled'
 import * as exampleActions from '../../store/modules/example'
 
 
+
+
 export default function Login() {
 
-    return <h1>Login</h1>;
+    const dispatch = useDispatch()
+
+    function handleClick(e) {
+        e.preventDefault();
+
+        dispatch(exampleActions.clicaBotaoRequest());
+    }
+    return (
+        <Container>
+            <h1>Login</h1>
+            <button type="button" onClick={handleClick}>Enviar</button>
+        </Container>
+    );
 }

@@ -3,5 +3,5 @@ import exampleReducer from './example/reducer'
 
 
 export default combineReducer({
-    exampleReducer,
+    example: exampleReducer,
 })
